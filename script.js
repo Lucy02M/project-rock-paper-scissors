@@ -2,11 +2,11 @@ const choices = ["rock", "paper", "scissors"];
 const winners = [];
 
 function game(){
+  console.clear();
   for (let i = 0; i <= 5; i++){
     playRound(i);
   };
   document.querySelector("button").textContent = "Play new game";
-  console.clear();
   logWins();
 }
 
