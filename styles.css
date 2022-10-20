@@ -1,0 +1,15 @@
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button{
+    background-color: brown;
+    color: aliceblue;
+    height: 50px;
+    width: 120px;
+    font-size: large;
+    padding: 10px 5px 10px 5px;
+}
