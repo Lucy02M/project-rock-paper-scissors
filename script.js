@@ -1,22 +1,37 @@
 const choices = ["rock", "paper", "scissors"];
 
-function getComputerChoice(){
+function game(){
+  playRound();
+}
+
+function playRound(){
+  const playerSelection = playerChoice();
+  const computerSelection = computerChoice();
+  const winner = checkWinner(playerSelection, computerSelection);
+}
+
+function playerChoice(){
+  let input = prompt("Choose");
+  input = input.toLowerCase;
+  return input;
+};
+
+function computerChoice(){
   return choices[Math.floor(Math.random()*choices.length)]
 };
 
-function getPlayerChoice(){
-  const playerChoice = prompt("Choose", "");
-  return playerChoice.toLowerCase;
+function checkWinner(choiceP, choiceC){
+  console.log(choiceP, choiceC);
+  if (choiceP === choiceC){
+    return "Tie";
+}
+else if ((choiceP == "rock" && choiceC == "scissors") || 
+         (choiceP == "paper" && choiceC == "rock") || 
+         (choiceP == "scissors" && choiceC == "paper"))
+      {return "Player";}
+else {
+  return "Computer";
 };
+}
 
-function playRound(playerSelection, computerSelection){
-    const computerSelection = getComputerChoice();
-    const playerSelection = getPlayerChoice();
-
-    if (computerSelection == playerSelection){
-        return "Tie";
-    }
-    else (computerSelection != playerSelection);{
-        return "We'll see"
-    };
-};
+game();
