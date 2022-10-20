@@ -3,16 +3,19 @@ const winners = [];
 
 function game(){
   for (let i = 0; i <= 5; i++){
-    playRound();
+    playRound(i);
   };
+  document.querySelector("button").textContent = "Play new game";
+  console.clear();
   logWins();
 }
 
-function playRound(){
+function playRound(round){
   const playerSelection = playerChoice();
   const computerSelection = computerChoice();
   const winner = checkWinner(playerSelection, computerSelection);
   winners.push(winner);
+  logRound(playerSelection, computerSelection, winner, round);
 }
 
 function playerChoice(){
@@ -48,4 +51,10 @@ function logWins(){
   console.log("Ties:", ties);
 }
 
-game();
+function logRound(playerChoice, computerChoice, winner, round){
+  console.log("Round:", round)
+  console.log("Player chose:", playerChoice)
+  console.log("Computer chose:", computerChoice)
+  console.log(winner, "Won the round")
+  console.log("---------------")
+} 
