@@ -3,8 +3,8 @@ const winners = [];
 
 function game() {
   console.clear();
-  for (let i = 0; i <= 5; i++) {
-    playRound(i);
+  for (let i = 1; i <= 5; i++) {
+    playRound(i);                                                   
   }
   document.querySelector("button").textContent = "Play new game";
   logWins();
