@@ -3,12 +3,11 @@ const choices = ["rock", "paper", "scissors"];
 
 function resetGame(){
   winners = [];
-  document.querySelector(".playerScore").textContent = "Score: 0";
-  document.querySelector(".computerScore").textContent = "Score: 0";
-  document.querySelector(".ties").textContent = "Ties: 0";
+  document.querySelector(".playerScore").textContent = "0";
+  document.querySelector(".computerScore").textContent = "0";
   document.querySelector(".winner").textContent = "";
-  document.querySelector(".playerChoice").textContent = "";
-  document.querySelector(".computerChoice").textContent = "";
+  document.querySelector(".playerChoice").textContent = "Your Weapons";
+  document.querySelector(".computerChoice").textContent = "Computer Weapons";
   document.querySelector(".reset").style.display = "none";
 }
 
@@ -40,15 +39,15 @@ function playRound(playerChoice) {
 function displayEnd(){
   let playerWins =  winners.filter((item) => item == "Player").length;
     if (playerWins == 5){
-      document.querySelector(".winner").textContent = "You won 5 rounds! Congrats!";}
+      document.querySelector(".winner").textContent = "You Win!";}
     else {
-      document.querySelector(".winner").textContent = "Sorry, the computer won 5 rounds";}
+      document.querySelector(".winner").textContent = "Computer Wins :(";}
     document.querySelector(".reset").style.display = "flex";
 }
 
 function displayRound(playerChoice, computerChoice, winner){
   document.querySelector(".playerChoice").textContent = `You Chose: ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)}`;
-  document.querySelector(".computerChoice").textContent = `The Computer Chose: ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}`;
+  document.querySelector(".computerChoice").textContent = `Computer Chose: ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}`;
   displayRoundWinner(winner);
 }
 
@@ -58,7 +57,7 @@ function displayRoundWinner(winner){
   } else if (winner == "Computer"){
     document.querySelector(".winner").textContent = "Computer won the round!";
   } else {
-    document.querySelector(".winner").textContent = "The round was a tie";
+    document.querySelector(".winner").textContent = "It's a tie";
   }
 }
 
@@ -66,9 +65,8 @@ function tallyWins(){
   const pWinCount = winners.filter((item) => item == "Player").length;
   const cWinCount = winners.filter((item) => item == "Computer").length;
   const ties = winners.filter((item) => item == "Tie").length;
-  document.querySelector(".playerScore").textContent = `Score: ${pWinCount}`;
-  document.querySelector(".computerScore").textContent = `Score: ${cWinCount}`;
-  document.querySelector(".ties").textContent = `Ties: ${ties}`;
+  document.querySelector(".playerScore").textContent = `${pWinCount}`;
+  document.querySelector(".computerScore").textContent = `${cWinCount}`;
 }
 
 
@@ -103,7 +101,6 @@ function checkWinner(choice1, choice2) {
 function setWins() {
   const pWinCount = winners.filter((item) => item == "Player").length;
   const cWinCount = winners.filter((item) => item == "Computer").length;
-  const ties = winners.filter((item) => item == "Tie").length;
 }
 
 startGame();
