@@ -28,7 +28,7 @@ function playRound(playerChoice) {
   const computerChoice = computerSelect();
   const winner = checkWinner(playerChoice, computerChoice);
   winners.push(winner);
-  tallyWins();
+  scoreCount();
   displayRound(playerChoice, computerChoice, winner);
   wins = checkWins();
   if (wins == 5){
@@ -61,7 +61,7 @@ function displayRoundWinner(winner){
   }
 }
 
-function tallyWins(){
+function scoreCount(){
   const pWinCount = winners.filter((item) => item == "Player").length;
   const cWinCount = winners.filter((item) => item == "Computer").length;
   const ties = winners.filter((item) => item == "Tie").length;
