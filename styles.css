@@ -1,20 +1,31 @@
 @media only screen and (max-width: 600px) {
 
   body{
-    font-size: 13px !important;
+    font-size: 12px !important;
+    width: 93vw !important;
+    
   }
 
   #title{
-    width: 55vh !important;
-    padding: 6px !important;
+    width: 40vh !important;
+    padding: 15px 0 0 0 !important;
     text-align: center !important;
+    font-size:17px !important;
+    position:absolute !important;
+  }
+
+  .winner{
+    font-size:17px;
   }
 
   .winnerDiv{
-    font-size: 13px !important;
+    font-size: 11px !important;
+    margin-top: 12vh; 
   }
 
   .reset{
+    margin:10px;
+    font-size: 13px !important;
     width: 35vw !important;
     height: 5vh !important;
   }
@@ -22,8 +33,13 @@
   .sections{
     display: flex !important;
     flex-direction: column !important;
-    position: absolute !important;
-    margin-top: 45% !important;
+  }
+  img{
+    width:90px !important;
+  }
+  .playerImgs,
+  .computerImgs {
+    width:40vh !important;
   }
 }
 
@@ -50,6 +66,7 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     color: white;
+    overflow: hidden !important;
   }
 
   #title{
@@ -61,7 +78,7 @@ body {
     border-right: 3px solid rgb(5, 2, 0);
     border-radius: 5px;
     height: 6vh;
-    width: 60vw;
+    width: 600px;
     
   }
 
